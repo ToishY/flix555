@@ -20,7 +20,7 @@
 			$ch = curl_init();
 
 			//prepare string
-			$apiString = str_replace('%key=%','key='.$this->key,$this->$functionName($functionArgs));
+			$apiString = str_replace('%key%','key='.$this->key,$this->$functionName($functionArgs));
 
 			//setopts
 			curl_setopt($ch, CURLOPT_URL, $apiString);
@@ -39,69 +39,69 @@
 		}
 
 		function accountInfo(){
-			return 'http://'.$this->host.'/api/account/info?%key=%';
+			return 'http://'.$this->host.'/api/account/info?%key%';
 		}
 
 		function accountStats($daysLimit = 14){
-			return 'http://'.$this->host.'/api/account/stats?%key=%&last='.$daysLimit;
+			return 'http://'.$this->host.'/api/account/stats?%key%&last='.$daysLimit;
 		}
 
 		function uploadByURL($videoURL){
-			return 'http://'.$this->host.'/api/upload/url?%key=%&url='.$videoURL;
+			return 'http://'.$this->host.'/api/upload/url?%key%&url='.$videoURL;
 		}
 
 		function uploadServer(){
-			return 'http://'.$this->host.'/api/upload/server?%key=%';
+			return 'http://'.$this->host.'/api/upload/server?%key%';
 		}
 
 		function fileInfo($fileCodes){
-			return 'http://'.$this->host.'/api/file/info?%key=%&file_code='.urlencode($fileCodes);
+			return 'http://'.$this->host.'/api/file/info?%key%&file_code='.urlencode($fileCodes);
 		}
 
 		function fileList($inputArray){
 			//$inputArray = array("a1b2c3e4",1,100,0,NULL,NULL);
 			list($folderId, $pageNumber, $perPage, $public, $created, $videoTitle) = $inputArray;
-			return 'http://'.$this->host.'/api/file/list?%key=%&page='.$pageNumber.'&per_page='.$perPage.'&fld_id='.$folderId.'&public='.$public.'&created='.urlencode($created).'&title='.urlencode($videoTitle);
+			return 'http://'.$this->host.'/api/file/list?%key%&page='.$pageNumber.'&per_page='.$perPage.'&fld_id='.$folderId.'&public='.$public.'&created='.urlencode($created).'&title='.urlencode($videoTitle);
 		}
 
 		function fileRename($inputArray){
 			//$inputArray = array("d5e6f7g8","my awesome video")
 			list($fileCodes, $videoTitle) = $inputArray;
-			return 'http://'.$this->host.'/api/file/rename?%key=%&file_code='.urlencode($fileCodes).'&title='.urlencode($videoTitle);
+			return 'http://'.$this->host.'/api/file/rename?%key%&file_code='.urlencode($fileCodes).'&title='.urlencode($videoTitle);
 		}
 
 		function fileClone($fileCodes){
-			return 'http://'.$this->host.'/api/file/clone?%key=%&file_code='.urlencode($fileCodes);
+			return 'http://'.$this->host.'/api/file/clone?%key%&file_code='.urlencode($fileCodes);
 		}
 
 		function fileSetFolder($inputArray){
 			//$inputArray = array("d5e6f7g8","folderName")
 			list($fileCodes, $folderId) = $inputArray;
-			return 'http://'.$this->host.'/api/file/set_folder?%key=%&file_code='.urlencode($fileCodes).'&fld_id='.$folderId;
+			return 'http://'.$this->host.'/api/file/set_folder?%key%&file_code='.urlencode($fileCodes).'&fld_id='.$folderId;
 		}
 
 		function folderList($folderId){
-			return 'http://'.$this->host.'/api/folder/list?%key=%&fld_id='.$folderId;
+			return 'http://'.$this->host.'/api/folder/list?%key%&fld_id='.$folderId;
 		}
 
 		function createFolder($inputArray){
 			//$inputArray = array("xle1390a","my awesome folder")
 			list($parentId, $folderName) = $inputArray;
-			return 'http://'.$this->host.'/api/folder/create?%key=%&parent_id='.$parentId.'&name='.urlencode($folderName);
+			return 'http://'.$this->host.'/api/folder/create?%key%&parent_id='.$parentId.'&name='.urlencode($folderName);
 		}
 
 		function renameFolder($inputArray){
 			//$inputArray = array("a1b2c3e4","my awesome folder")
 			list($folderId, $folderName) = $inputArray;
-			return 'http://'.$this->host.'/api/folder/rename?%key=%&fld_id='.$folderId.'&name='.urlencode($folderName);
+			return 'http://'.$this->host.'/api/folder/rename?%key%&fld_id='.$folderId.'&name='.urlencode($folderName);
 		}
 
 		function deletedFiles($fileLimit = 50){
-			return 'http://'.$this->host.'/api/files/deleted?%key=%&last='.$fileLimit;
+			return 'http://'.$this->host.'/api/files/deleted?%key%&last='.$fileLimit;
 		}
 
 		function dmcaFiles($fileLimit = 50){
-			return 'http://'.$this->host.'/api/files/dmca?%key=%&last='.$fileLimit;
+			return 'http://'.$this->host.'/api/files/dmca?%key%&last='.$fileLimit;
 		}
 
 		/*
