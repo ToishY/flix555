@@ -90,7 +90,7 @@
 			return 'http://'.$this->host.'/api/folder/create?%key=%&parent_id='.$parentId.'&name='.urlencode($folderName);
 		}
 
-		function renameFolder($folderId,$folderName){
+		function renameFolder($inputArray){
 			//$inputArray = array("a1b2c3e4","my awesome folder")
 			list($folderId, $folderName) = $inputArray;
 			return 'http://'.$this->host.'/api/folder/rename?%key=%&fld_id='.$folderId.'&name='.urlencode($folderName);
