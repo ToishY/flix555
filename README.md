@@ -13,4 +13,5 @@ Tested with PHP 7.2
 - Files that contain special characters, like `[]-` will get replaced by `_` (and for some reason spaces get stripped before and after these special characters)
 
 **CONCLUSION**
+
 Decent service when you're going to stuff manually; Crap when you're going for automation. Examples of "better" alternatives are: openload, streamango, vidoza etc.
