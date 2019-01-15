@@ -5,14 +5,15 @@
  	  Full API documentation can be found here: https://flix555.docs.apiary.io
  	- Credits
  	  Made by: ZteeY
- 	  Last modified: 14-01-2019
+ 	  Last modified: 15-01-2019
  	*/
 	class FlixxMain{
-		function __construct($apiKey){
-			// API key
+		private $key;
+		private $host;
+
+		function __construct($apiHost, $apiKey){
+			$this->host = $apiHost;
 			$this->key = $apiKey;
-	 		// Host
-	 		$this->host = "flix555.com";
 		}
 
 		function curlBuilder($functionName, $functionArgs = NULL){
@@ -108,9 +109,9 @@
 		#This call did not work > resulted in forbidden
 		function fileDirectLink($fileCode, $quality = NULL){
 			if((isset($quality)) && ($quality === "h" || $quality === "l" || $quality === "o"){
-				return 'http://'.$this->host.'/api/file/direct_link?%key=%&file_code='.$fileCode.'&q='.$quality;
+				return 'http://'.$this->host.'/api/file/direct_link?%key%&file_code='.$fileCode.'&q='.$quality;
 			}
-			return 'http://'.$this->host.'/api/file/direct_link?%key=%&file_code='.$fileCode;
+			return 'http://'.$this->host.'/api/file/direct_link?%key%&file_code='.$fileCode;
 		}
 		*/
 	}
