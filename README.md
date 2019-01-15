@@ -14,4 +14,4 @@ Tested with PHP 7.2
 
 **CONCLUSION**
 
-Decent service when you're going to stuff manually; Crap when you're going for automation. Examples of "better" alternatives are: openload, streamango, vidoza etc.
+Decent service when you're going to do stuff manually; Crap when you're going for automation. Examples of "better" alternatives are: openload, streamango, vidoza etc.
