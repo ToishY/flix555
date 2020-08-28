@@ -4,8 +4,8 @@
  	  A simple class with methods to make API calls to FLIX555. 
  	  Full API documentation can be found here: https://flix555.docs.apiary.io
  	- Credits
- 	  Made by: ToishY
-	  Link: https://github.com/ToishY/flix555
+ 	  Made by: ToshY
+	  Link: https://github.com/ToshY/flix555
  	  Last modified: 15-01-2019
  	*/
 	class FlixxMain{
